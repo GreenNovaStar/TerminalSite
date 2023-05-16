@@ -1,0 +1,39 @@
+{
+  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
+  "title": "Brian Yip",
+  "name": "Brian Yip",
+  "ascii": "Brian Yip",
+  "social": {
+    "github": "GreenNovaStar",
+    "linkedin": "brian-yip-641102150"
+  },
+  "email": "brianyip5@gmail.com",
+  "ps1_hostname": "brianyip.dev",
+  "ps1_username": "guest",
+  "repo": "https://github.com/GreenNovaStar",
+  "resume_url": "/resume",
+  "donate_urls": {
+    "paypal": "",
+    "patreon": ""
+  },
+  "colors": {
+    "light": {
+      "background": "#FFFFDB",
+      "foreground": "#282a36",
+      "yellow": "#ffb86c",
+      "green": "#50fa7b",
+      "gray": "#8B6BB9",
+      "blue": "#67AFC0",
+      "red": "#ff5555"
+    },
+    "dark": {
+      "background": "#282a36",
+      "foreground": "#f8f8f2",
+      "yellow": "#ffb86c",
+      "green": "#50fa7b",
+      "gray": "#bd93f9",
+      "blue": "#8be9fd",
+      "red": "#ff5555"
+    }
+  }
+}
