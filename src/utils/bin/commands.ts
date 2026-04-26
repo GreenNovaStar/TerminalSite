@@ -30,13 +30,30 @@ export const repo = async (args: string[]): Promise<string> => {
 
 // About
 export const about = async (args: string[]): Promise<string> => {
-  return `Hi, I am ${config.name}.
-Welcome to my website!
-More about me:
-'sumfetch' - short summary.
-'resume' - my latest resume.
-'readme' - my github readme.`;
+  return `Hi, I'm ${config.name} — a Software Development Engineer at Amazon Web Services.
+
+I currently build AI-powered migration assessment agents on the AWS Transform
+team. Previously, I worked on AWS Transfer Family where I led AS2 protocol
+certifications and built the B2B Data Interchange console.
+
+I enjoy working across the stack — from React frontends to distributed cloud
+services — and I'm always looking for interesting problems to solve.
+
+Get to know me:
+'experience' - my work experience.
+'skills' - my technical skills.
+'contact' - how to reach me.
+'resume' - my latest resume.`;
 };
+
+// Experience
+export { experienceCommand as experience } from './experienceCommand';
+
+// Skills
+export { skillsCommand as skills } from './skillsCommand';
+
+// Contact
+export { contactCommand as contact } from './contactCommand';
 
 export const resume = async (args: string[]): Promise<string> => {
   window.open(`${config.resume_url}`);
@@ -154,5 +171,6 @@ export const banner = (args?: string[]): string => {
                                                                         ░░░░░
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
+Type 'experience' to see my work experience.
 `;
 };
