@@ -24,8 +24,8 @@ const Y: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <span className="text-light-yellow dark:text-dark-yellow">{children}</span>
 );
 
-const ColorBlock: React.FC<{ color: string }> = ({ color }) => (
-  <span style={{ color }}>{'██'}</span>
+const ColorBlock: React.FC<{ className: string }> = ({ className }) => (
+  <span className={className}>{'██'}</span>
 );
 
 const art: React.ReactNode[] = [
@@ -57,7 +57,7 @@ const info: React.ReactNode[] = [
   <><Link href={`https://github.com/${config.social.github}`}>{'github.com/' + config.social.github}</Link></>,
   <><Link href={`https://linkedin.com/in/${config.social.linkedin}`}>{'linkedin.com/in/' + config.social.linkedin}</Link></>,
   <><Y>-----------</Y></>,
-  <><ColorBlock color={config.colors.dark.green} /> <ColorBlock color={config.colors.dark.yellow} /> <ColorBlock color={config.colors.dark.blue} /> <ColorBlock color={config.colors.dark.gray} /> <ColorBlock color={config.colors.dark.red} /> <ColorBlock color={config.colors.dark.foreground} /></>,
+  <><ColorBlock className="text-light-green dark:text-dark-green" /> <ColorBlock className="text-light-yellow dark:text-dark-yellow" /> <ColorBlock className="text-light-blue dark:text-dark-blue" /> <ColorBlock className="text-light-gray dark:text-dark-gray" /> <ColorBlock className="text-light-red dark:text-dark-red" /> <ColorBlock className="text-light-foreground dark:text-dark-foreground" /></>,
 ];
 
 export const Sumfetch: React.FC = () => (

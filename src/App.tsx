@@ -41,7 +41,7 @@ const App = () => {
       onClick={onClickAnywhere}
     >
       <main className="bg-light-background dark:bg-dark-background w-full h-full p-2">
-        <div className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
+        <div className="p-8 overflow-hidden h-full border-2 rounded border-light-gray dark:border-dark-gray">
           <div ref={containerRef} className="overflow-y-auto h-full">
             <History history={history} />
 

@@ -55,6 +55,9 @@ export { skillsCommand as skills } from './skillsCommand';
 // Contact
 export { contactCommand as contact } from './contactCommand';
 
+// Theme
+export { themeCommand as theme } from './themeCommand';
+
 export const resume = async (args: string[]): Promise<string> => {
   window.open(`${config.resume_url}`);
   return 'Opening resume...';

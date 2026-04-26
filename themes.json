@@ -139,6 +139,26 @@
       "red": "#DC322F"
     }
   },
+  "OneDark": {
+    "light": {
+      "background": "#FAFAFA",
+      "foreground": "#383A42",
+      "yellow": "#D19A66",
+      "green": "#50A14F",
+      "gray": "#A626A4",
+      "blue": "#4078F2",
+      "red": "#E45649"
+    },
+    "dark": {
+      "background": "#1E2127",
+      "foreground": "#E5E5E5",
+      "yellow": "#D19A66",
+      "green": "#98C379",
+      "gray": "#C678DD",
+      "blue": "#56B6C2",
+      "red": "#E06C75"
+    }
+  },
   "Paraiso": {
     "light": {
       "background": "#A39E9B",
