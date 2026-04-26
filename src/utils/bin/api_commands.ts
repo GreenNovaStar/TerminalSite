@@ -8,11 +8,13 @@ import { getWeather } from '../api';
 export const projects = async (args: string[]): Promise<string> => {
   const projects = await getProjects();
   return projects
+    .filter((repo: any) => !repo.fork)
+    .sort((a: any, b: any) => b.stargazers_count - a.stargazers_count)
     .map(
-      (repo) =>
-        `${repo.name} - <a class="text-light-blue dark:text-dark-blue underline" href="${repo.html_url}" target="_blank">${repo.html_url}</a>`,
+      (repo: any) =>
+        `<span class="text-light-yellow dark:text-dark-yellow">★ ${repo.stargazers_count}</span> <span class="text-light-green dark:text-dark-green">${repo.name}</span>${repo.description ? ` - ${repo.description}` : ''}\n    <a class="text-light-blue dark:text-dark-blue underline" href="${repo.html_url}" target="_blank">${repo.html_url}</a>`,
     )
-    .join('\n');
+    .join('\n\n');
 };
 
 export const quote = async (args: string[]): Promise<string> => {

@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --light-background: #FFFFDB;
+  --light-foreground: #282a36;
+  --light-yellow: #ffb86c;
+  --light-green: #50fa7b;
+  --light-gray: #8B6BB9;
+  --light-blue: #67AFC0;
+  --light-red: #ff5555;
+
+  --dark-background: #282a36;
+  --dark-foreground: #f8f8f2;
+  --dark-yellow: #ffb86c;
+  --dark-green: #50fa7b;
+  --dark-gray: #bd93f9;
+  --dark-blue: #8be9fd;
+  --dark-red: #ff5555;
+}
+
 @font-face {
   font-family: 'Hack';
   src: url(/assets/fonts/Hack-NF.ttf);
@@ -14,9 +32,7 @@
 
 html,
 body,
-body > div:first-child,
-div#__next,
-div#__next > div {
+#root {
   height: 100%;
   overflow: auto;
 }
@@ -27,15 +43,15 @@ div#__next > div {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e252e;
+  background: var(--dark-background);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ebdbb2;
+  background: var(--dark-gray);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff8037;
+  background: var(--dark-yellow);
 }
