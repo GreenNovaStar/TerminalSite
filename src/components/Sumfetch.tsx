@@ -42,10 +42,11 @@ const art: React.ReactNode[] = [
   <>{' '}<G>#############</G>{'        '}<P>######</P></>,
   null,
   null,
+  null,
 ];
 
-const info: React.ReactNode[] = [
-  <>sumfetch</>,
+const buildInfo = (title: string): React.ReactNode[] => [
+  <>{title}</>,
   <><Y>-----------</Y></>,
   <><Y>ABOUT</Y></>,
   <>{config.name}</>,
@@ -56,19 +57,23 @@ const info: React.ReactNode[] = [
   <><Link href={`mailto:${config.email}`}>{config.email}</Link></>,
   <><Link href={`https://github.com/${config.social.github}`}>{'github.com/' + config.social.github}</Link></>,
   <><Link href={`https://linkedin.com/in/${config.social.linkedin}`}>{'linkedin.com/in/' + config.social.linkedin}</Link></>,
+  <><Link href={config.portfolio_url}>{config.portfolio_url.replace('https://', '')}</Link></>,
   <><Y>-----------</Y></>,
   <><ColorBlock className="text-light-green dark:text-dark-green" /> <ColorBlock className="text-light-yellow dark:text-dark-yellow" /> <ColorBlock className="text-light-blue dark:text-dark-blue" /> <ColorBlock className="text-light-gray dark:text-dark-gray" /> <ColorBlock className="text-light-red dark:text-dark-red" /> <ColorBlock className="text-light-foreground dark:text-dark-foreground" /></>,
 ];
 
-export const Sumfetch: React.FC = () => (
-  <div className="whitespace-pre mt-4" style={{ lineHeight: 'normal' }}>
-    {art.map((line, i) => (
-      <div key={i} className="flex">
-        <span className="inline-block" style={{ width: '45ch' }}>{line ?? ' '}</span>
-        <span>{info[i]}</span>
-      </div>
-    ))}
-  </div>
-);
+export const Sumfetch: React.FC<{ title?: string }> = ({ title = 'sumfetch' }) => {
+  const info = buildInfo(title);
+  return (
+    <div className="whitespace-pre mt-4" style={{ lineHeight: 'normal' }}>
+      {art.map((line, i) => (
+        <div key={i} className="flex">
+          <span className="inline-block" style={{ width: '45ch' }}>{line ?? ' '}</span>
+          <span>{info[i]}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Sumfetch;

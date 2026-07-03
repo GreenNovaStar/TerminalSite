@@ -1,8 +1,12 @@
 import React from 'react';
 import { Sumfetch } from '../../components/Sumfetch';
 
-const sumfetch = async (args: string[]): Promise<React.ReactNode> => {
-  return React.createElement(Sumfetch);
+export const sumfetch = async (args: string[]): Promise<React.ReactNode> => {
+  return React.createElement(Sumfetch, { title: 'sumfetch' });
+};
+
+export const neofetch = async (args: string[]): Promise<React.ReactNode> => {
+  return React.createElement(Sumfetch, { title: 'neofetch' });
 };
 
 export default sumfetch;

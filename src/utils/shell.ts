@@ -1,5 +1,6 @@
 import React from 'react';
 import * as bin from './bin';
+import { recordCommand } from './commandHistory';
 
 export const shell = async (
   command: string,
@@ -9,6 +10,10 @@ export const shell = async (
 ) => {
   const args = command.split(' ');
   args[0] = args[0].toLowerCase();
+
+  if (command.trim() !== '') {
+    recordCommand(command);
+  }
 
   if (args[0] === 'clear') {
     clearHistory();

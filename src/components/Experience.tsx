@@ -15,7 +15,7 @@ const roles: Role[] = [
     date: 'Jan 2026 - Present',
     location: 'Boston, MA',
     bullets: [
-      'Building AI-powered migration assessment agents using Strands SDK',
+      'Building AI-powered migration assessment agents using Strands Agents',
       'Developing compute and business agents for migration cost analysis',
       'Implementing agent evaluation framework for quality validation',
     ],

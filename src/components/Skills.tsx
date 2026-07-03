@@ -20,7 +20,7 @@ const categories: SkillCategory[] = [
   },
   {
     name: 'AI/ML',
-    items: ['Strands SDK'],
+    items: ['Strands Agents'],
   },
   {
     name: 'Tools',
