@@ -8,19 +8,29 @@ const ThemeList: React.FC = () => {
     <div className="whitespace-pre-wrap mt-2" style={{ lineHeight: 'normal' }}>
       <div>Usage: theme {'<name>'}</div>
       <div className="mt-2">
-        <span className="text-light-yellow dark:text-dark-yellow">Current theme:</span> {current}
+        <span className="text-light-yellow dark:text-dark-yellow">
+          Current theme:
+        </span>{' '}
+        {current}
       </div>
       <div className="mt-2">
-        <span className="text-light-yellow dark:text-dark-yellow">Available themes:</span>
+        <span className="text-light-yellow dark:text-dark-yellow">
+          Available themes:
+        </span>
       </div>
       {names.map((name, i) => (
-        <div key={i}>{'  '}{name === current ? `* ${name}` : `  ${name}`}</div>
+        <div key={i}>
+          {'  '}
+          {name === current ? `* ${name}` : `  ${name}`}
+        </div>
       ))}
     </div>
   );
 };
 
-export const themeCommand = async (args: string[]): Promise<React.ReactNode | string> => {
+export const themeCommand = async (
+  args: string[],
+): Promise<React.ReactNode | string> => {
   if (args.length === 0 || !args[0]) {
     return <ThemeList />;
   }

@@ -16,9 +16,15 @@ export const applyTheme = (name: string): boolean => {
   const mode = root.classList.contains('dark') ? 'dark' : 'light';
   const colors = theme[mode as 'light' | 'dark'];
 
-  Object.entries(colors).forEach(([key, value]) => {
-    root.style.setProperty(`--light-${key}`, theme.light[key as keyof typeof theme.light]);
-    root.style.setProperty(`--dark-${key}`, theme.dark[key as keyof typeof theme.dark]);
+  Object.keys(colors).forEach((key) => {
+    root.style.setProperty(
+      `--light-${key}`,
+      theme.light[key as keyof typeof theme.light],
+    );
+    root.style.setProperty(
+      `--dark-${key}`,
+      theme.dark[key as keyof typeof theme.dark],
+    );
   });
 
   currentTheme = name;
@@ -32,9 +38,11 @@ export const initTheme = () => {
     document.documentElement.classList.add('dark');
   }
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    document.documentElement.classList.toggle('dark', e.matches);
-  });
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (e) => {
+      document.documentElement.classList.toggle('dark', e.matches);
+    });
 
   if (currentTheme !== 'dracula') {
     applyTheme(currentTheme);

@@ -4,32 +4,30 @@ import { Ps1 } from '../Ps1';
 
 export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
   history,
-}) => {
-  return (
-    <>
-      {history.map((entry: HistoryInterface, index: number) => (
-        <div key={entry.command + index}>
-          <div className="flex flex-row space-x-2">
-            <div className="flex-shrink">
-              <Ps1 />
-            </div>
-
-            <div className="flex-grow">{entry.command}</div>
+}) => (
+  <>
+    {history.map((entry: HistoryInterface, index: number) => (
+      <div key={entry.command + index}>
+        <div className="flex flex-row space-x-2">
+          <div className="flex-shrink">
+            <Ps1 />
           </div>
 
-          {typeof entry.output === 'string' ? (
-            <p
-              className="whitespace-pre-wrap mb-2"
-              style={{ lineHeight: 'normal' }}
-              dangerouslySetInnerHTML={{ __html: entry.output }}
-            />
-          ) : (
-            <div className="mb-2">{entry.output}</div>
-          )}
+          <div className="flex-grow">{entry.command}</div>
         </div>
-      ))}
-    </>
-  );
-};
+
+        {typeof entry.output === 'string' ? (
+          <p
+            className="whitespace-pre-wrap mb-2"
+            style={{ lineHeight: 'normal' }}
+            dangerouslySetInnerHTML={{ __html: entry.output }}
+          />
+        ) : (
+          <div className="mb-2">{entry.output}</div>
+        )}
+      </div>
+    ))}
+  </>
+);
 
 export default History;

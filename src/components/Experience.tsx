@@ -34,7 +34,9 @@ const roles: Role[] = [
   },
 ];
 
-const SectionHeader: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+const SectionHeader: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => (
   <div className="mb-4">
     <span className="text-light-yellow dark:text-dark-yellow">{children}</span>
     {'\n  ══════════════════════════════════════════════════════'}
@@ -45,14 +47,24 @@ const RoleEntry: React.FC<{ role: Role }> = ({ role }) => (
   <div className="mb-6">
     <div>
       {'  '}
-      <span className="text-light-green dark:text-dark-green">{role.company}</span>
+      <span className="text-light-green dark:text-dark-green">
+        {role.company}
+      </span>
       {'  '}
       {role.date}
     </div>
-    <div>{'  '}{role.title}{'  '}{role.location}</div>
+    <div>
+      {'  '}
+      {role.title}
+      {'  '}
+      {role.location}
+    </div>
     <div>{'  ──────────────────────────────────────────────────────'}</div>
     {role.bullets.map((bullet, i) => (
-      <div key={i}>{'  • '}{bullet}</div>
+      <div key={i}>
+        {'  • '}
+        {bullet}
+      </div>
     ))}
   </div>
 );

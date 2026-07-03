@@ -34,7 +34,9 @@ export const Contact: React.FC = () => (
     {links.map((link, i) => (
       <div key={i} className="mb-2">
         {'  '}
-        <span className="text-light-green dark:text-dark-green">{link.label}</span>
+        <span className="text-light-green dark:text-dark-green">
+          {link.label}
+        </span>
         {'  '}
         <a
           className="text-light-blue dark:text-dark-blue underline"

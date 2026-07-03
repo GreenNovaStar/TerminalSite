@@ -17,8 +17,8 @@ export const Input = ({
 }) => {
   const onSubmit = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     const commands: [string] = history
-      .map(({ command }) => command)
-      .filter((command: string) => command);
+      .map((entry) => entry.command)
+      .filter((entry: string) => entry);
 
     if (event.key === 'c' && event.ctrlKey) {
       event.preventDefault();

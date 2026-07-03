@@ -16,7 +16,17 @@ const categories: SkillCategory[] = [
   },
   {
     name: 'Cloud',
-    items: ['AWS CDK', 'CloudFormation', 'CloudWatch', 'DynamoDB', 'EC2', 'ECS Fargate', 'EventBridge', 'Lambda', 'SQS'],
+    items: [
+      'AWS CDK',
+      'CloudFormation',
+      'CloudWatch',
+      'DynamoDB',
+      'EC2',
+      'ECS Fargate',
+      'EventBridge',
+      'Lambda',
+      'SQS',
+    ],
   },
   {
     name: 'AI/ML',
@@ -40,9 +50,13 @@ export const Skills: React.FC = () => (
     </div>
     {categories.map((category, i) => (
       <div key={i} className="mb-2">
-        <span className="text-light-green dark:text-dark-green">{'  '}{category.name}</span>
+        <span className="text-light-green dark:text-dark-green">
+          {'  '}
+          {category.name}
+        </span>
         {'\n  ──────────────────────────────────────────────────────\n'}
-        {'  '}{category.items.join(' · ')}
+        {'  '}
+        {category.items.join(' · ')}
       </div>
     ))}
   </div>

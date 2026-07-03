@@ -42,10 +42,18 @@ export const Projects: React.FC = () => (
       <div key={i} className="mb-4">
         <div>
           {'  '}
-          <span className="text-light-green dark:text-dark-green">{project.name}</span>
+          <span className="text-light-green dark:text-dark-green">
+            {project.name}
+          </span>
         </div>
-        <div>{'  '}{project.tagline}</div>
-        <div>{'  '}{project.stack}</div>
+        <div>
+          {'  '}
+          {project.tagline}
+        </div>
+        <div>
+          {'  '}
+          {project.stack}
+        </div>
         <div>
           {'  '}
           <a
@@ -59,7 +67,8 @@ export const Projects: React.FC = () => (
         </div>
       </div>
     ))}
-    <div>{'  See more on my portfolio: '}
+    <div>
+      {'  See more on my portfolio: '}
       <a
         className="text-light-blue dark:text-dark-blue underline"
         href="https://brianyip.dev"

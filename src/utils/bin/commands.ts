@@ -6,13 +6,12 @@ import { getCommandHistory } from '../commandHistory';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
-  var c = '';
+  let c = '';
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
     if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
+      c += `${Object.keys(bin).sort()[i - 1]}\n`;
     } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
+      c += `${Object.keys(bin).sort()[i - 1]} `;
     }
   }
   return `Welcome! Here are all the available commands:
@@ -36,8 +35,9 @@ export const portfolio = async (args: string[]): Promise<string> => {
 };
 
 // About
-export const about = async (args: string[]): Promise<string> => {
-  return `Hi, I'm ${config.name} — a Software Development Engineer at Amazon Web Services.
+export const about = async (
+  args: string[],
+): Promise<string> => `Hi, I'm ${config.name} — a Software Development Engineer at Amazon Web Services.
 
 I currently build AI-powered migration assessment agents on the AWS Transform
 team. Previously, I worked on AWS Transfer Family where I led AS2 protocol
@@ -56,24 +56,19 @@ Get to know me:
 'portfolio' - my full portfolio site.
 'contact' - how to reach me.
 'resume' - my latest resume.`;
-};
 
 // Whoami-style one-liner
-export const whois = async (args: string[]): Promise<string> => {
-  return `${config.name} — Software Development Engineer @ AWS. Type 'about' for more.`;
-};
+export const whois = async (args: string[]): Promise<string> =>
+  `${config.name} — Software Development Engineer @ AWS. Type 'about' for more.`;
 
 // Education
-export const education = async (args: string[]): Promise<string> => {
-  return `EDUCATION
+export const education = async (args: string[]): Promise<string> => `EDUCATION
   ══════════════════════════════════════════════════════
   B.S. Computer Science
   California State University, Northridge (CSUN) — 2021`;
-};
 
 // Tools & setup
-export const uses = async (args: string[]): Promise<string> => {
-  return `WHAT I USE
+export const uses = async (args: string[]): Promise<string> => `WHAT I USE
   ══════════════════════════════════════════════════════
   Editor    VS Code
   Languages TypeScript, Python, Java
@@ -81,7 +76,6 @@ export const uses = async (args: string[]): Promise<string> => {
   Cloud     AWS (Lambda, ECS, DynamoDB, S3)
   AI/ML     Strands Agents
   Shell     zsh`;
-};
 
 // Command history
 export const history = async (args: string[]): Promise<string> => {
@@ -89,7 +83,9 @@ export const history = async (args: string[]): Promise<string> => {
   if (entries.length === 0) {
     return 'No commands in history yet.';
   }
-  return entries.map((cmd, i) => `${(i + 1).toString().padStart(4)}  ${cmd}`).join('\n');
+  return entries
+    .map((cmd, i) => `${(i + 1).toString().padStart(4)}  ${cmd}`)
+    .join('\n');
 };
 
 // Optional one-line descriptions for `man`. This is just flavor text — the set
@@ -204,58 +200,45 @@ export const duckduckgo = async (args: string[]): Promise<string> => {
 };
 
 // Typical linux commands
-export const echo = async (args: string[]): Promise<string> => {
-  return args.join(' ');
-};
+export const echo = async (args: string[]): Promise<string> => args.join(' ');
 
-export const whoami = async (args: string[]): Promise<string> => {
-  return `${config.ps1_username}`;
-};
+export const whoami = async (args: string[]): Promise<string> =>
+  `${config.ps1_username}`;
 
-export const ls = async (args: string[]): Promise<string> => {
-  return `a
+export const ls = async (args: string[]): Promise<string> => `a
 bunch
 of
 fake
 directories`;
-};
 
-export const cd = async (args: string[]): Promise<string> => {
-  return `unfortunately, i cannot afford more directories.`;
-};
+export const cd = async (args: string[]): Promise<string> =>
+  `unfortunately, i cannot afford more directories.`;
 
-export const pwd = async (args: string[]): Promise<string> => {
-  return `/home/${config.ps1_username}`;
-};
+export const pwd = async (args: string[]): Promise<string> =>
+  `/home/${config.ps1_username}`;
 
-export const date = async (args: string[]): Promise<string> => {
-  return new Date().toString();
-};
+export const date = async (args: string[]): Promise<string> =>
+  new Date().toString();
 
-export const vi = async (args: string[]): Promise<string> => {
-  return `woah, you still use 'vi'? just try 'vim'.`;
-};
+export const vi = async (args: string[]): Promise<string> =>
+  `woah, you still use 'vi'? just try 'vim'.`;
 
-export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
-};
+export const vim = async (args: string[]): Promise<string> =>
+  `'vim' is so outdated. how about 'nvim'?`;
 
-export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
-};
+export const nvim = async (args: string[]): Promise<string> =>
+  `'nvim'? too fancy. why not 'emacs'?`;
 
-export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode.`;
-};
+export const emacs = async (args?: string[]): Promise<string> =>
+  `you know what? just use vscode.`;
 
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
 };
 
-export const exit = async (args?: string[]): Promise<string> => {
-  return `there is no escape. (nice try, though)`;
-};
+export const exit = async (args?: string[]): Promise<string> =>
+  `there is no escape. (nice try, though)`;
 
 // Fun / gags
 const fortunes: string[] = [
@@ -273,9 +256,11 @@ export const fortune = async (args?: string[]): Promise<string> => {
 };
 
 export const cowsay = async (args: string[]): Promise<string> => {
-  const text = (args.join(' ') || 'moo').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const top = ' ' + '_'.repeat(text.length + 2);
-  const bottom = ' ' + '-'.repeat(text.length + 2);
+  const text = (args.join(' ') || 'moo')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  const top = ` ${'_'.repeat(text.length + 2)}`;
+  const bottom = ` ${'-'.repeat(text.length + 2)}`;
   return `${top}
 < ${text} >
 ${bottom}
@@ -286,8 +271,9 @@ ${bottom}
                 ||     ||`;
 };
 
-export const sl = async (args?: string[]): Promise<string> => {
-  return `You typed 'sl' instead of 'ls'. Here comes the train:
+export const sl = async (
+  args?: string[],
+): Promise<string> => `You typed 'sl' instead of 'ls'. Here comes the train:
 
       ====        ________                ___________
   _D _|  |_______/        \\__I_I_____===__|_________|
@@ -296,20 +282,18 @@ export const sl = async (args?: string[]): Promise<string> => {
   |      |  |   H  |__--------------------| [___] |
   | ________|___H__/__|_____/[][]~\\_______|       |
   |/ |   |-----------I_____I [][] []  D   |=======|__`;
-};
 
-export const matrix = async (args?: string[]): Promise<string> => {
-  return `Wake up, Neo...
+export const matrix = async (
+  args?: string[],
+): Promise<string> => `Wake up, Neo...
 
   01001000 01100101 01101100 01101100 01101111
   01010111 01101111 01110010 01101100 01100100
 
   (the terminal has you)`;
-};
 
 // Banner
-export const banner = (args?: string[]): string => {
-  return `
+export const banner = (args?: string[]): string => `
   ███████████             ███                          █████ █████  ███
  ░░███░░░░░███           ░░░                          ░░███ ░░███  ░░░
   ░███    ░███ ████████  ████   ██████   ████████      ░░███ ███   ████  ████████
@@ -325,4 +309,3 @@ Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
 Type 'experience' to see my work experience.
 `;
-};
