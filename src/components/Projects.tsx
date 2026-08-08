@@ -10,6 +10,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: 'Sniper Duel',
+    tagline: 'Browser sniper-hunt game — find them before they find you',
+    stack: 'JavaScript · Phaser.js · HTML · CSS',
+    url: 'https://greennovastar.github.io/sniper-duel/',
+    urlLabel: 'greennovastar.github.io/sniper-duel',
+  },
+  {
     name: 'TastEZ',
     tagline: 'Recipe & drink-pairing mobile app (CSUN senior capstone)',
     stack: 'Flutter · Dart · Spoonacular API · Google Maps API',
